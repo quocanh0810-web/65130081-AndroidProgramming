@@ -1,6 +1,8 @@
 package tiil.edu.appcong;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,5 +22,23 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+    }
+
+    public void XuLyCong(View view){
+        EditText editTextSoA  = findViewById(R.id.edtA);
+        EditText editTextSoB  = findViewById(R.id.edtB);
+        EditText editTextKetQua  = findViewById(R.id.edtKQ);
+        // lay du lieu ve
+        String strA= editTextSoA.getText().toString();
+        String strB= editTextSoB.getText().toString();
+        //Chuyen du lieu sang dang so
+        int so_A =  Integer.parseInt(strA);
+        int so_B =  Integer.parseInt(strB);
+        // tinh toan theo yeu cau
+        int tong = so_A + so_B;
+        String strTong = String.valueOf(tong); // chuyen sang dang chuoi
+        // hien ra man hinh
+        editTextKetQua.setText(strTong);
+
     }
 }
