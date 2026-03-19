@@ -17,22 +17,54 @@ public class MainActivity extends AppCompatActivity {
     EditText editTextSo2;
     EditText editTextKQ;
     Button nutCong, nutTru, nutNhan, nutChia;
-    void TimDieuKhien(){
-        editTextSo1 = (EditText)findViewById(R.id.edtSo1);
-        editTextSo2 = (EditText)findViewById(R.id.edtSo2);
-        editTextKQ = (EditText)findViewById(R.id.edtKetQua);
+
+    void TimDieuKhien() {
+        editTextSo1 = (EditText) findViewById(R.id.edtSo1);
+        editTextSo2 = (EditText) findViewById(R.id.edtSo2);
+        editTextKQ = (EditText) findViewById(R.id.edtKetQua);
         nutCong = (Button) findViewById(R.id.btnCong);
         nutTru = (Button) findViewById(R.id.btnTru);
         nutNhan = (Button) findViewById(R.id.btnNhan);
         nutChia = (Button) findViewById(R.id.btnChia);
 
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
         TimDieuKhien();
+        // gan bo lang nghe su kien va code xu ly
+        nutCong.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                XULY_CONG();
+
+            }
+        });
+
+        nutTru.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                XULY_TRU();
+            }
+        });
+
+        nutNhan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                XULY_NHAN();
+            }
+        });
+
+        nutChia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                XULY_CHIA();
+
+            }
+        });
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -40,75 +72,46 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-
-    // Xu ly cong
-   public void XuLyCong(View v){
-
-        //lay du lieu tu 2 dieu khien do
-        String soThu1 = editTextSo1.getText().toString();
-        String soThu2 = editTextSo2.getText().toString();
-        //Chuyen du lieu tu chuoi sang so
-        float soA = Float.parseFloat(soThu1);
-        float soB = Float.parseFloat(soThu2);
-        //Tinh toan
-        float Tong = soA + soB;
-        // Hien ket qua
-        EditText editTextKQ = (EditText)findViewById(R.id.edtKetQua);
-        String chuoiKQ = String.valueOf(Tong);
+    void XULY_CONG() {
+        String so1 = editTextSo1.getText().toString();
+        String so2 = editTextSo2.getText().toString();
+        float num1 = Float.parseFloat(so1);
+        float num2 = Float.parseFloat(so2);
+        float tong = num1 + num2;
+        String chuoiKQ = String.valueOf(tong);
         editTextKQ.setText(chuoiKQ);
     }
 
-    //Xu ly tru
-    public void XuLyTru(View v){
-
-        //lay du lieu tu 2 dieu khien do
-        String soThu1 = editTextSo1.getText().toString();
-        String soThu2 = editTextSo2.getText().toString();
-        //Chuyen du lieu tu chuoi sang so
-        float soA = Float.parseFloat(soThu1);
-        float soB = Float.parseFloat(soThu2);
-        //Tinh toan
-        float Hieu = soA - soB;
-        // Hien ket qua
-        EditText editTextKQ = (EditText)findViewById(R.id.edtKetQua);
-        String chuoiKQ = String.valueOf(Hieu);
+    void XULY_TRU() {
+        String so1 = editTextSo1.getText().toString();
+        String so2 = editTextSo2.getText().toString();
+        float num1 = Float.parseFloat(so1);
+        float num2 = Float.parseFloat(so2);
+        float hieu = num1 - num2;
+        String chuoiKQ = String.valueOf(hieu);
         editTextKQ.setText(chuoiKQ);
 
     }
 
-    //Xu ly nhan
-    public void XuLyNhan(View v){
-
-        //lay du lieu tu 2 dieu khien do
-        String soThu1 = editTextSo1.getText().toString();
-        String soThu2 = editTextSo2.getText().toString();
-        //Chuyen du lieu tu chuoi sang so
-        float soA = Float.parseFloat(soThu1);
-        float soB = Float.parseFloat(soThu2);
-        //Tinh toan
-        float Tich = soA * soB;
-        // Hien ket qua
-        EditText editTextKQ = (EditText)findViewById(R.id.edtKetQua);
-        String chuoiKQ = String.valueOf(Tich);
+    void XULY_NHAN() {
+        String so1 = editTextSo1.getText().toString();
+        String so2 = editTextSo2.getText().toString();
+        float num1 = Float.parseFloat(so1);
+        float num2 = Float.parseFloat(so2);
+        float tich = num1 * num2;
+        String chuoiKQ = String.valueOf(tich);
         editTextKQ.setText(chuoiKQ);
+    }
 
+    void XULY_CHIA() {
+        String so1 = editTextSo1.getText().toString();
+        String so2 = editTextSo2.getText().toString();
+        float num1 = Float.parseFloat(so1);
+        float num2 = Float.parseFloat(so2);
+        float thuong = num1 / num2;
+        String chuoiKQ = String.valueOf(thuong);
+        editTextKQ.setText(chuoiKQ);
     }
 
 
-    // xu ly chia
-     public void XuLyChia(View v){
-
-        //lay du lieu tu 2 dieu khien do
-        String soThu1 = editTextSo1.getText().toString();
-        String soThu2 = editTextSo2.getText().toString();
-        //Chuyen du lieu tu chuoi sang so
-        float soA = Float.parseFloat(soThu1);
-        float soB = Float.parseFloat(soThu2);
-        //Tinh toan
-        float Thuong = soA / soB;
-        // Hien ket qua
-        String chuoiKQ = String.valueOf(Thuong);
-        editTextKQ.setText(chuoiKQ);
-
-    }
 }
