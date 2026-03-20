@@ -1,4 +1,4 @@
-package quocanh.ntu.bth_7;
+package quocanh.ntu.bth_7lv;
 
 import org.junit.Test;
 

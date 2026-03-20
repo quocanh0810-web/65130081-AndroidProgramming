@@ -1,4 +1,4 @@
-package quocanh.ntu.bth_7;
+package quocanh.ntu.bth_7lv;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("quocanh.ntu.bth_7", appContext.getPackageName());
+        assertEquals("quocanh.ntu.bth_7lv", appContext.getPackageName());
     }
 }

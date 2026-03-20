@@ -1,4 +1,4 @@
-package quocanh.ntu.bth_7;
+package quocanh.ntu.bth_7lv;
 
 import android.os.Bundle;
 import android.view.View;
@@ -23,23 +23,22 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
         dsVatLieu = new ArrayList<String>();
-            // them du lieu o day
+        // them du lieu o day
         dsVatLieu.add("Xi Măng");
         dsVatLieu.add("Gạch");
         dsVatLieu.add("Đá ốp lát");
         dsVatLieu.add("Ống nhựa");
         dsVatLieu.add("Sơn chống thấm");
-            // tạo adapter
+        // tạo adapter
         ArrayAdapter<String> adapterVatLieu;
         adapterVatLieu = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, dsVatLieu);
-            // gắn vào điều khiển hiển thị listview
-                // tìm
+        // gắn vào điều khiển hiển thị listview
+            // tìm
         ListView lvTenVatLieu = findViewById(R.id.lvDanhSachVL);
-                // Gắn
+            // Gắn
         lvTenVatLieu.setAdapter(adapterVatLieu);
-                // lắng nghe và xử lý sự kiện user tương tác
+            // lắng nghe và xử lý sự kiện user tương tác
         lvTenVatLieu.setOnItemClickListener(BoLangNghevaXuLy);
-
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -47,12 +46,14 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     // vd: BoLangNghevaXuLy
-    AdapterView.OnItemClickListener BoLangNghevaXuLy = new AdapterView.OnItemClickListener(){
+    AdapterView.OnItemClickListener BoLangNghevaXuLy = new AdapterView.OnItemClickListener() {
         @Override
-        public void onItemClick(AdapterView<?> adapterView, View view, int i, long l){
+        public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
             String strTenVatLieuChon = dsVatLieu.get(i);
-            Toast.makeText(MainActivity.this, strTenVatLieuChon, Toast.LENGTH_LONG).show();
-        }
-    };
-
+            Toast.makeText(MainActivity.this,
+                            strTenVatLieuChon,
+                            Toast.LENGTH_LONG
+                    ).show();
+                }
+            };
 }

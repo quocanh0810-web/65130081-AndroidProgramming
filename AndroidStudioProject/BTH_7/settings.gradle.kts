@@ -22,5 +22,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "BTH_7"
+rootProject.name = "BTH_7LV"
 include(":app")

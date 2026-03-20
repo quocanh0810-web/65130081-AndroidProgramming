@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "quocanh.ntu.bth_7"
+    namespace = "quocanh.ntu.bth_7lv"
     compileSdk {
         version = release(36) {
             minorApiLevel = 1
@@ -11,7 +11,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "quocanh.ntu.bth_7"
+        applicationId = "quocanh.ntu.bth_7lv"
         minSdk = 24
         targetSdk = 36
         versionCode = 1
