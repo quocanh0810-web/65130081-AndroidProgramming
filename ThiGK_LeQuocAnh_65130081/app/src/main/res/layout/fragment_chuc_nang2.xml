@@ -7,12 +7,11 @@
     android:layout_height="match_parent"
     tools:context=".ChucNang2Fragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/textView2"
+
+    <ListView
+        android:id="@+id/lv_ca_khuc"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:text="@string/hello_blank_fragment"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
