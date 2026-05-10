@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "530367943004",
+    "project_id": "vieccanlam-62257",
+    "storage_bucket": "vieccanlam-62257.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:530367943004:android:e46a32f72779655721b199",
+        "android_client_info": {
+          "package_name": "quocanh.ntu.vieccanlam"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXvQBDn5tRNKUATw4qwmUqPyzPDQRT7Ww"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
